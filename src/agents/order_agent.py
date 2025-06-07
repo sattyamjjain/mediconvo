@@ -5,7 +5,7 @@ Order Agent - Handles medical order creation (labs, imaging, medications)
 from typing import Dict, Any, List, Optional
 from agno.agent import Agent
 from agno.models.anthropic import Claude
-from agno.models.openai import OpenAI
+from agno.models.openai import OpenAIChat
 from agno.tools.reasoning import ReasoningTools
 from src.tools.emr_tools import EMRTools
 from src.agents.base_agent import AgentResponse
@@ -31,7 +31,7 @@ class OrderAgent:
         if model_provider.lower() == "anthropic":
             model = Claude(id="claude-3-5-sonnet-20241022")
         else:
-            model = OpenAI(id="gpt-4-turbo-preview")
+            model = OpenAIChat(id="gpt-4-turbo-preview")
 
         # Initialize EMR tools
         self.emr_tools = EMRTools()

@@ -1,17 +1,14 @@
 from typing import List, Dict, Any, Optional
-from agno.tools import Tool
+from agno.tools import Toolkit
 from src.emr.client import EMRClient, Patient, Order
 import logging
 
 logger = logging.getLogger(__name__)
 
 
-class EMRTools(Tool):
+class EMRTools(Toolkit):
     def __init__(self):
-        super().__init__(
-            name="emr_tools",
-            description="Tools for interacting with Electronic Medical Records (EMR) system",
-        )
+        super().__init__(name="emr_tools")
         self.emr_client = EMRClient()
 
     def search_patients(self, query: str, limit: int = 10) -> List[Dict[str, Any]]:

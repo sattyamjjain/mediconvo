@@ -6,7 +6,7 @@ from typing import Dict, Any, List, Optional
 from agno.team import Team
 from agno.agent import Agent
 from agno.models.anthropic import Claude
-from agno.models.openai import OpenAI
+from agno.models.openai import OpenAIChat
 from agno.tools.reasoning import ReasoningTools
 from src.agents.chart_agent import ChartAgent
 from src.agents.order_agent import OrderAgent
@@ -39,7 +39,7 @@ class CommandProcessor:
         if model_provider.lower() == "anthropic":
             coordinator_model = Claude(id="claude-3-5-sonnet-20241022")
         else:
-            coordinator_model = OpenAI(id="gpt-4-turbo-preview")
+            coordinator_model = OpenAIChat(id="gpt-4-turbo-preview")
 
         self.coordinator = Agent(
             name="EMR Command Coordinator",

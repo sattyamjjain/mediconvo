@@ -2,10 +2,12 @@ agno
 boto3
 google-cloud-speech
 fastapi
+openai
+anthropic
 uvicorn
 pydantic
 python-dotenv
-speechrecognition
+SpeechRecognition
 pyaudio
 websockets
 requests
