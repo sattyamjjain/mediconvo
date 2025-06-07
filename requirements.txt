@@ -1,0 +1,15 @@
+agno
+boto3
+google-cloud-speech
+fastapi
+uvicorn
+pydantic
+python-dotenv
+speechrecognition
+pyaudio
+websockets
+requests
+aiofiles
+pytest
+pytest-asyncio
+httpx
